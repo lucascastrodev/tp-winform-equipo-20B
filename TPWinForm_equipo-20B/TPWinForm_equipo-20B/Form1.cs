@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace TPWinForm_equipo_20B
 {
-    public partial class Form1 : Form
+    public partial class frmPrincipal : Form
     {
-        public Form1()
+        public frmPrincipal()
         {
             InitializeComponent();
         }
@@ -23,6 +23,12 @@ namespace TPWinForm_equipo_20B
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
             dgvArticulos.DataSource = negocio.listar();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAgregar altaProducto = new frmAgregar();
+            altaProducto.ShowDialog();
         }
     }
 }

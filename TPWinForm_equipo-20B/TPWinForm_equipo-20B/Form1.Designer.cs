@@ -1,6 +1,6 @@
 ﻿namespace TPWinForm_equipo_20B
 {
-    partial class Form1
+    partial class frmPrincipal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -51,6 +51,7 @@
             this.dgvArticulos.Location = new System.Drawing.Point(19, 220);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.Size = new System.Drawing.Size(743, 387);
             this.dgvArticulos.TabIndex = 6;
             // 
@@ -61,7 +62,7 @@
             this.txbBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.ShortcutsEnabled = false;
-            this.txbBuscar.Size = new System.Drawing.Size(744, 23);
+            this.txbBuscar.Size = new System.Drawing.Size(744, 27);
             this.txbBuscar.TabIndex = 0;
             this.txbBuscar.TabStop = false;
             this.txbBuscar.Text = "Buscar...";
@@ -73,7 +74,7 @@
             this.lblTitulo.Location = new System.Drawing.Point(12, 9);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(234, 32);
+            this.lblTitulo.Size = new System.Drawing.Size(295, 41);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Gestion de Articulos";
             // 
@@ -83,7 +84,7 @@
             this.rbNombre.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.rbNombre.Location = new System.Drawing.Point(39, 45);
             this.rbNombre.Name = "rbNombre";
-            this.rbNombre.Size = new System.Drawing.Size(77, 23);
+            this.rbNombre.Size = new System.Drawing.Size(94, 27);
             this.rbNombre.TabIndex = 0;
             this.rbNombre.TabStop = true;
             this.rbNombre.Text = "Nombre";
@@ -95,7 +96,7 @@
             this.rbCodigo.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.rbCodigo.Location = new System.Drawing.Point(157, 45);
             this.rbCodigo.Name = "rbCodigo";
-            this.rbCodigo.Size = new System.Drawing.Size(71, 23);
+            this.rbCodigo.Size = new System.Drawing.Size(86, 27);
             this.rbCodigo.TabIndex = 1;
             this.rbCodigo.TabStop = true;
             this.rbCodigo.Text = "Codigo";
@@ -107,7 +108,7 @@
             this.rbMarca.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.rbMarca.Location = new System.Drawing.Point(304, 45);
             this.rbMarca.Name = "rbMarca";
-            this.rbMarca.Size = new System.Drawing.Size(65, 23);
+            this.rbMarca.Size = new System.Drawing.Size(78, 27);
             this.rbMarca.TabIndex = 2;
             this.rbMarca.TabStop = true;
             this.rbMarca.Text = "Marca";
@@ -119,7 +120,7 @@
             this.rbCategoria.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.rbCategoria.Location = new System.Drawing.Point(476, 45);
             this.rbCategoria.Name = "rbCategoria";
-            this.rbCategoria.Size = new System.Drawing.Size(86, 23);
+            this.rbCategoria.Size = new System.Drawing.Size(105, 27);
             this.rbCategoria.TabIndex = 3;
             this.rbCategoria.TabStop = true;
             this.rbCategoria.Text = "Categoria";
@@ -135,10 +136,11 @@
             this.btnAgregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAgregar.Location = new System.Drawing.Point(808, 220);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(88, 38);
+            this.btnAgregar.Size = new System.Drawing.Size(111, 38);
             this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "&Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
@@ -148,7 +150,7 @@
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnModificar.Location = new System.Drawing.Point(808, 278);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(88, 38);
+            this.btnModificar.Size = new System.Drawing.Size(111, 38);
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -161,7 +163,7 @@
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEliminar.Location = new System.Drawing.Point(808, 336);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(88, 38);
+            this.btnEliminar.Size = new System.Drawing.Size(111, 38);
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -188,17 +190,17 @@
             this.btnVerDetalle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnVerDetalle.Location = new System.Drawing.Point(808, 399);
             this.btnVerDetalle.Name = "btnVerDetalle";
-            this.btnVerDetalle.Size = new System.Drawing.Size(88, 38);
+            this.btnVerDetalle.Size = new System.Drawing.Size(111, 38);
             this.btnVerDetalle.TabIndex = 5;
             this.btnVerDetalle.Text = "&Ver Detalle";
             this.btnVerDetalle.UseVisualStyleBackColor = false;
             // 
-            // Form1
+            // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(933, 621);
+            this.ClientSize = new System.Drawing.Size(931, 613);
             this.Controls.Add(this.btnVerDetalle);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnEliminar);
@@ -213,7 +215,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(949, 660);
             this.MinimumSize = new System.Drawing.Size(949, 660);
-            this.Name = "Form1";
+            this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AppGestionArticulos";
             this.Load += new System.EventHandler(this.Form1_Load);
