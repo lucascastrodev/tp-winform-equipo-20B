@@ -62,7 +62,7 @@
             this.txbBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.ShortcutsEnabled = false;
-            this.txbBuscar.Size = new System.Drawing.Size(744, 27);
+            this.txbBuscar.Size = new System.Drawing.Size(744, 31);
             this.txbBuscar.TabIndex = 0;
             this.txbBuscar.TabStop = false;
             this.txbBuscar.Text = "Buscar...";
@@ -74,7 +74,7 @@
             this.lblTitulo.Location = new System.Drawing.Point(12, 9);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(295, 41);
+            this.lblTitulo.Size = new System.Drawing.Size(351, 48);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Gestion de Articulos";
             // 
@@ -84,7 +84,7 @@
             this.rbNombre.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.rbNombre.Location = new System.Drawing.Point(39, 45);
             this.rbNombre.Name = "rbNombre";
-            this.rbNombre.Size = new System.Drawing.Size(94, 27);
+            this.rbNombre.Size = new System.Drawing.Size(110, 32);
             this.rbNombre.TabIndex = 0;
             this.rbNombre.TabStop = true;
             this.rbNombre.Text = "Nombre";
@@ -96,7 +96,7 @@
             this.rbCodigo.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.rbCodigo.Location = new System.Drawing.Point(157, 45);
             this.rbCodigo.Name = "rbCodigo";
-            this.rbCodigo.Size = new System.Drawing.Size(86, 27);
+            this.rbCodigo.Size = new System.Drawing.Size(102, 32);
             this.rbCodigo.TabIndex = 1;
             this.rbCodigo.TabStop = true;
             this.rbCodigo.Text = "Codigo";
@@ -108,7 +108,7 @@
             this.rbMarca.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.rbMarca.Location = new System.Drawing.Point(304, 45);
             this.rbMarca.Name = "rbMarca";
-            this.rbMarca.Size = new System.Drawing.Size(78, 27);
+            this.rbMarca.Size = new System.Drawing.Size(91, 32);
             this.rbMarca.TabIndex = 2;
             this.rbMarca.TabStop = true;
             this.rbMarca.Text = "Marca";
@@ -120,7 +120,7 @@
             this.rbCategoria.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.rbCategoria.Location = new System.Drawing.Point(476, 45);
             this.rbCategoria.Name = "rbCategoria";
-            this.rbCategoria.Size = new System.Drawing.Size(105, 27);
+            this.rbCategoria.Size = new System.Drawing.Size(122, 32);
             this.rbCategoria.TabIndex = 3;
             this.rbCategoria.TabStop = true;
             this.rbCategoria.Text = "Categoria";
@@ -167,6 +167,7 @@
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // groupBox1
             // 
@@ -197,10 +198,10 @@
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(931, 613);
+            this.ClientSize = new System.Drawing.Size(927, 604);
             this.Controls.Add(this.btnVerDetalle);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnEliminar);

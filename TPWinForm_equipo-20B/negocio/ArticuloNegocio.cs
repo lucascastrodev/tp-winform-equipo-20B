@@ -45,7 +45,7 @@ namespace negocio
             }
         }
 
-            public void agregar(Articulo nuevo)
+        public void agregar(Articulo nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
 
@@ -67,6 +67,23 @@ namespace negocio
             {
                 datos.CerrarConexion();
             }
+        }
+
+        public void eliminar(int id)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("delete from ARTICULOS where id = @id");
+                datos.setearParametro("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
         }
     }
 }

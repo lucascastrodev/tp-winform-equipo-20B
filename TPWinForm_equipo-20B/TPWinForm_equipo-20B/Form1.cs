@@ -29,6 +29,32 @@ namespace TPWinForm_equipo_20B
         {
             frmAgregar altaProducto = new frmAgregar();
             altaProducto.ShowDialog();
+
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            dgvArticulos.DataSource = null;              // limpiar la grilla
+            dgvArticulos.DataSource = negocio.listar();  // actualizar con los nuevos datos
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            Articulo seleccionado;
+
+            try
+            {
+                DialogResult respuesta =  MessageBox.Show("¿Estas seguro que querés eliminar? No podrás volver atrás","Eliminando",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                     seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                     negocio.eliminar(seleccionado.idArticulo);
+                     dgvArticulos.DataSource = negocio.listar();
+                }
+    
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
