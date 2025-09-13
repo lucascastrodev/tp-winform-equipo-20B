@@ -14,6 +14,7 @@ namespace negocio
         {
             List<Articulo> lista = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
+            ImagenNegocio imagenNegocio = new ImagenNegocio();
 
             try
             {
@@ -32,6 +33,13 @@ namespace negocio
                     aux.Marca = new Marca();
                     aux.Marca.IdMarca = (int)datos.Lector["IdMarca"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
+                    List<Imagen> imagenes = imagenNegocio.listarPorArticulo(aux.idArticulo);
+                    if (imagenes != null && imagenes.Count > 0)
+                        aux.UrlImagen = imagenes[0].UrlImagen;
+                    else
+                        aux.UrlImagen = null;
+
+
 
 
                     lista.Add(aux);

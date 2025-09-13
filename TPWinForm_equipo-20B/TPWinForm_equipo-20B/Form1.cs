@@ -14,6 +14,8 @@ namespace TPWinForm_equipo_20B
 {
     public partial class frmPrincipal : Form
     {
+        public List<Articulo> listaarticulo = new List<Articulo>();
+
         public frmPrincipal()
         {
             InitializeComponent();
@@ -23,6 +25,8 @@ namespace TPWinForm_equipo_20B
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
             dgvArticulos.DataSource = negocio.listar();
+  
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -68,6 +72,26 @@ namespace TPWinForm_equipo_20B
             ArticuloNegocio negocio = new ArticuloNegocio();
             dgvArticulos.DataSource = null;              // limpiar la grilla
             dgvArticulos.DataSource = negocio.listar();  // actualizar con los nuevos datos
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnVerDetalle_Click(object sender, EventArgs e)
+        {
 
         }
     }
