@@ -56,5 +56,19 @@ namespace TPWinForm_equipo_20B
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            frmAgregar altaProducto = new frmAgregar(seleccionado);
+            altaProducto.ShowDialog();
+
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            dgvArticulos.DataSource = null;              // limpiar la grilla
+            dgvArticulos.DataSource = negocio.listar();  // actualizar con los nuevos datos
+
+        }
     }
 }

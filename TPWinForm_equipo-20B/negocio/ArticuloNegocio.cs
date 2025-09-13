@@ -17,13 +17,14 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("Select Id, Nombre, Descripcion, IdCategoria, IdMarca, Precio from ARTICULOS;");
+                datos.setearConsulta("Select Id, Codigo, Nombre, Descripcion, IdCategoria, IdMarca, Precio from ARTICULOS;");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     Articulo aux = new Articulo();
                     aux.idArticulo = (int)datos.Lector["Id"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     aux.Categoria = new Categoria();
@@ -85,5 +86,33 @@ namespace negocio
 
 
         }
+
+        public void modificar(Articulo modificar)
+        { 
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update ARTICULOS set Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion , IdMarca = @IdMarca, IdCategoria = @Idcat, Precio = @Precio Where Id = @id");
+                datos.setearParametro("@Codigo", modificar.Codigo);
+                datos.setearParametro("@Nombre", modificar.Nombre);
+                datos.setearParametro("@Descripcion", modificar.Descripcion);
+                datos.setearParametro("@IdMarca", modificar.Marca.IdMarca);
+                datos.setearParametro("@Idcat", modificar.Categoria.IdCategoria);
+                datos.setearParametro("@Precio", modificar.Precio);
+                datos.setearParametro("@Id", modificar.idArticulo);
+
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        } 
     }
 }

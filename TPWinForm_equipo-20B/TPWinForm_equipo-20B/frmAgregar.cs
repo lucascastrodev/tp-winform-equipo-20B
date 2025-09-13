@@ -14,10 +14,20 @@ namespace TPWinForm_equipo_20B
 {
     public partial class frmAgregar : Form
     {
+
+        private Articulo articulo = null;
+        
         public frmAgregar()
         {
             InitializeComponent();
         }
+
+        public frmAgregar(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
+        }
+
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -26,15 +36,20 @@ namespace TPWinForm_equipo_20B
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Articulo nuevoArticulo = new Articulo();
+            //Articulo articulo = new Articulo();
             ArticuloNegocio negocio = new ArticuloNegocio();
 
 
             try
             {
-                nuevoArticulo.Codigo = txtCodigoArticulo.Text;
-                nuevoArticulo.Nombre = txtNombre.Text;
-                nuevoArticulo.Descripcion = txtDescripcion.Text;
+                if (articulo == null)
+                {
+                    articulo = new Articulo();
+                }
+
+                articulo.Codigo = txtCodigoArticulo.Text;
+                articulo.Nombre = txtNombre.Text;
+                articulo.Descripcion = txtDescripcion.Text;
 
                 // Marca y Categoría
                 if (cboIDMarca.SelectedValue == null || cboIDCategoria.SelectedValue == null)
@@ -43,8 +58,8 @@ namespace TPWinForm_equipo_20B
                     return;
                 }
 
-                nuevoArticulo.Marca = new Marca { IdMarca = (int)cboIDMarca.SelectedValue };
-                nuevoArticulo.Categoria = new Categoria { IdCategoria = (int)cboIDCategoria.SelectedValue };
+                articulo.Marca = new Marca { IdMarca = (int)cboIDMarca.SelectedValue };
+                articulo.Categoria = new Categoria { IdCategoria = (int)cboIDCategoria.SelectedValue };
 
                 // Precio
                 decimal precio;
@@ -54,10 +69,20 @@ namespace TPWinForm_equipo_20B
                     return;
                 }
 
-                nuevoArticulo.Precio = precio;
+                articulo.Precio = precio;
 
-                negocio.agregar(nuevoArticulo);
-                MessageBox.Show("Agregado exitosamente");
+                if (articulo.idArticulo != 0)
+                {
+                    negocio.modificar(articulo);
+                    MessageBox.Show("Modificado exitosamente");
+                }
+                else
+                {
+
+                    negocio.agregar(articulo);
+                    MessageBox.Show("Agregado exitosamente");
+
+                }
                 Close();
 
             }
@@ -83,6 +108,19 @@ namespace TPWinForm_equipo_20B
             cboIDCategoria.DisplayMember = "Descripcion";
             cboIDCategoria.ValueMember = "IdCategoria";
             cboIDCategoria.SelectedIndex = 0;
+
+            if (articulo != null)
+            {
+                txtCodigoArticulo.Text = articulo.Codigo.ToString();
+                txtNombre.Text = articulo.Nombre;
+                txtDescripcion.Text = articulo.Descripcion;
+                cboIDCategoria.SelectedValue = articulo.Categoria.IdCategoria;
+                cboIDMarca.SelectedValue = articulo.Marca.IdMarca;
+                txtPrecio.Text = articulo.Precio.ToString();
+
+            }
+
         }
     }
+
 }
