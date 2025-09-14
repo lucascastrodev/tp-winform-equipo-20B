@@ -31,18 +31,12 @@
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.txbBuscar = new System.Windows.Forms.TextBox();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.rbNombre = new System.Windows.Forms.RadioButton();
-            this.rbCodigo = new System.Windows.Forms.RadioButton();
-            this.rbMarca = new System.Windows.Forms.RadioButton();
-            this.rbCategoria = new System.Windows.Forms.RadioButton();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnVerDetalle = new System.Windows.Forms.Button();
             this.pbxarticulo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxarticulo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,11 +44,11 @@
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvArticulos.Location = new System.Drawing.Point(19, 220);
+            this.dgvArticulos.Location = new System.Drawing.Point(13, 111);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
-            this.dgvArticulos.Size = new System.Drawing.Size(561, 387);
+            this.dgvArticulos.Size = new System.Drawing.Size(856, 387);
             this.dgvArticulos.TabIndex = 6;
             this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
@@ -62,11 +56,11 @@
             // txbBuscar
             // 
             this.txbBuscar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBuscar.Location = new System.Drawing.Point(18, 74);
+            this.txbBuscar.Location = new System.Drawing.Point(13, 74);
             this.txbBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.ShortcutsEnabled = false;
-            this.txbBuscar.Size = new System.Drawing.Size(744, 23);
+            this.txbBuscar.Size = new System.Drawing.Size(288, 27);
             this.txbBuscar.TabIndex = 0;
             this.txbBuscar.TabStop = false;
             this.txbBuscar.Text = "Buscar...";
@@ -75,60 +69,12 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(12, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(6, 9);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(234, 32);
+            this.lblTitulo.Size = new System.Drawing.Size(295, 41);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Gestion de Articulos";
-            // 
-            // rbNombre
-            // 
-            this.rbNombre.AutoSize = true;
-            this.rbNombre.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rbNombre.Location = new System.Drawing.Point(39, 45);
-            this.rbNombre.Name = "rbNombre";
-            this.rbNombre.Size = new System.Drawing.Size(77, 23);
-            this.rbNombre.TabIndex = 0;
-            this.rbNombre.TabStop = true;
-            this.rbNombre.Text = "Nombre";
-            this.rbNombre.UseVisualStyleBackColor = true;
-            // 
-            // rbCodigo
-            // 
-            this.rbCodigo.AutoSize = true;
-            this.rbCodigo.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rbCodigo.Location = new System.Drawing.Point(157, 45);
-            this.rbCodigo.Name = "rbCodigo";
-            this.rbCodigo.Size = new System.Drawing.Size(71, 23);
-            this.rbCodigo.TabIndex = 1;
-            this.rbCodigo.TabStop = true;
-            this.rbCodigo.Text = "Codigo";
-            this.rbCodigo.UseVisualStyleBackColor = true;
-            // 
-            // rbMarca
-            // 
-            this.rbMarca.AutoSize = true;
-            this.rbMarca.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rbMarca.Location = new System.Drawing.Point(304, 45);
-            this.rbMarca.Name = "rbMarca";
-            this.rbMarca.Size = new System.Drawing.Size(65, 23);
-            this.rbMarca.TabIndex = 2;
-            this.rbMarca.TabStop = true;
-            this.rbMarca.Text = "Marca";
-            this.rbMarca.UseVisualStyleBackColor = true;
-            // 
-            // rbCategoria
-            // 
-            this.rbCategoria.AutoSize = true;
-            this.rbCategoria.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.rbCategoria.Location = new System.Drawing.Point(476, 45);
-            this.rbCategoria.Name = "rbCategoria";
-            this.rbCategoria.Size = new System.Drawing.Size(86, 23);
-            this.rbCategoria.TabIndex = 3;
-            this.rbCategoria.TabStop = true;
-            this.rbCategoria.Text = "Categoria";
-            this.rbCategoria.UseVisualStyleBackColor = true;
             // 
             // btnAgregar
             // 
@@ -136,11 +82,11 @@
             this.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAgregar.Location = new System.Drawing.Point(808, 220);
+            this.btnAgregar.Location = new System.Drawing.Point(12, 506);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(111, 38);
+            this.btnAgregar.Size = new System.Drawing.Size(111, 26);
             this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "&Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -150,11 +96,11 @@
             // 
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(140)))), ((int)(((byte)(248)))));
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnModificar.Location = new System.Drawing.Point(808, 278);
+            this.btnModificar.Location = new System.Drawing.Point(140, 506);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(111, 38);
+            this.btnModificar.Size = new System.Drawing.Size(111, 26);
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -164,39 +110,25 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminar.Location = new System.Drawing.Point(808, 336);
+            this.btnEliminar.Location = new System.Drawing.Point(271, 506);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(111, 38);
+            this.btnEliminar.Size = new System.Drawing.Size(111, 26);
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rbCategoria);
-            this.groupBox1.Controls.Add(this.rbMarca);
-            this.groupBox1.Controls.Add(this.rbCodigo);
-            this.groupBox1.Controls.Add(this.rbNombre);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(18, 112);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(744, 100);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Zona de Busqueda";
-            // 
             // btnVerDetalle
             // 
             this.btnVerDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(184)))));
             this.btnVerDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerDetalle.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.btnVerDetalle.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerDetalle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnVerDetalle.Location = new System.Drawing.Point(808, 399);
+            this.btnVerDetalle.Location = new System.Drawing.Point(404, 506);
             this.btnVerDetalle.Name = "btnVerDetalle";
-            this.btnVerDetalle.Size = new System.Drawing.Size(111, 38);
+            this.btnVerDetalle.Size = new System.Drawing.Size(111, 26);
             this.btnVerDetalle.TabIndex = 5;
             this.btnVerDetalle.Text = "&Ver Detalle";
             this.btnVerDetalle.UseVisualStyleBackColor = false;
@@ -204,9 +136,9 @@
             // 
             // pbxarticulo
             // 
-            this.pbxarticulo.Location = new System.Drawing.Point(595, 220);
+            this.pbxarticulo.Location = new System.Drawing.Point(876, 111);
             this.pbxarticulo.Name = "pbxarticulo";
-            this.pbxarticulo.Size = new System.Drawing.Size(167, 167);
+            this.pbxarticulo.Size = new System.Drawing.Size(276, 387);
             this.pbxarticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxarticulo.TabIndex = 7;
             this.pbxarticulo.TabStop = false;
@@ -214,13 +146,12 @@
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(933, 621);
+            this.ClientSize = new System.Drawing.Size(1164, 576);
             this.Controls.Add(this.pbxarticulo);
             this.Controls.Add(this.btnVerDetalle);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -231,15 +162,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(949, 660);
-            this.MinimumSize = new System.Drawing.Size(949, 660);
+            this.MaximumSize = new System.Drawing.Size(1182, 623);
+            this.MinimumSize = new System.Drawing.Size(1182, 623);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AppGestionArticulos";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxarticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -251,14 +180,9 @@
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.TextBox txbBuscar;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.RadioButton rbNombre;
-        private System.Windows.Forms.RadioButton rbCodigo;
-        private System.Windows.Forms.RadioButton rbMarca;
-        private System.Windows.Forms.RadioButton rbCategoria;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnVerDetalle;
         private System.Windows.Forms.PictureBox pbxarticulo;
     }
