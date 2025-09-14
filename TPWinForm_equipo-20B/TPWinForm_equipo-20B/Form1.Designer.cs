@@ -64,6 +64,8 @@
             this.txbBuscar.Size = new System.Drawing.Size(288, 23);
             this.txbBuscar.TabIndex = 0;
             this.txbBuscar.TabStop = false;
+            this.txbBuscar.TextChanged += new System.EventHandler(this.txbBuscar_TextChanged);
+            this.txbBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbBuscar_KeyPress);
             // 
             // lblTitulo
             // 

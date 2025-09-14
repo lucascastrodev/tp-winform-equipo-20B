@@ -132,8 +132,30 @@ namespace TPWinForm_equipo_20B
 
             if (filtro != "")
             {
-                listafiltrada = listaarticulo.FindAll(x => x.Nombre == filtro);
+                listafiltrada = listaarticulo.FindAll(x => x.Nombre.ToUpper().Contains( filtro.ToUpper()) || x.Codigo.ToUpper().Contains(filtro.ToUpper()));
             }else
+            { listafiltrada = listaarticulo; }
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listafiltrada;
+            ocultarcolumna();
+        }
+
+        private void txbBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listafiltrada;
+
+            string filtro = txbBuscar.Text;
+
+            if (filtro != "")
+            {
+                listafiltrada = listaarticulo.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Codigo.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
             { listafiltrada = listaarticulo; }
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listafiltrada;
