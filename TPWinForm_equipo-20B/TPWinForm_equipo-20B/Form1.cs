@@ -26,6 +26,7 @@ namespace TPWinForm_equipo_20B
             listaarticulo = negocio.listar();
             dgvArticulos.DataSource = listaarticulo;
             pbxarticulo.Load(listaarticulo[0].UrlImagen);
+            ocultarcolumna();
 
   
 
@@ -41,6 +42,11 @@ namespace TPWinForm_equipo_20B
             dgvArticulos.DataSource = negocio.listar();  // actualizar con los nuevos datos
         }
 
+        private void ocultarcolumna()
+        {
+            dgvArticulos.Columns["UrlImagen"].Visible = false;
+            dgvArticulos.Columns["idArticulo"].Visible = false;
+        }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
@@ -116,7 +122,18 @@ namespace TPWinForm_equipo_20B
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            List<Articulo> listafiltrada;
+
+            string filtro = txbBuscar.Text;
+
+            if (filtro != "")
+            {
+                listafiltrada = listaarticulo.FindAll(x => x.Nombre == filtro);
+            }else
+            { listafiltrada = listaarticulo; }
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listafiltrada;
+
         }
     }
 }

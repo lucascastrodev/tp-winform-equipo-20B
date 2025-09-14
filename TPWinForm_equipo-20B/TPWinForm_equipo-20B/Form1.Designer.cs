@@ -64,7 +64,6 @@
             this.txbBuscar.Size = new System.Drawing.Size(288, 23);
             this.txbBuscar.TabIndex = 0;
             this.txbBuscar.TabStop = false;
-            this.txbBuscar.Text = "Buscar...";
             // 
             // lblTitulo
             // 
