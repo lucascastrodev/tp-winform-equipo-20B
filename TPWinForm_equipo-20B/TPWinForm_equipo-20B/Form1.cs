@@ -94,8 +94,8 @@ namespace TPWinForm_equipo_20B
         {
             Articulo seleccionado;
             seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            frmAgregar altaProducto = new frmAgregar(seleccionado);
-            altaProducto.ShowDialog();
+            FrmDetalle detalleproducto = new FrmDetalle(seleccionado);
+            detalleproducto.ShowDialog();
         }
     }
 }
