@@ -90,8 +90,12 @@ namespace TPWinForm_equipo_20B
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.UrlImagen);
+            if(dgvArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.UrlImagen);
+            }
+           
         }
 
         private void cargarImagen(string imagen) 
@@ -100,9 +104,9 @@ namespace TPWinForm_equipo_20B
             {
                 pbxarticulo.Load(imagen);
             }
-            catch
+            catch 
             {
-                pbxarticulo.Load("https://media.istockphoto.com/id/931643150/es/vector/icono-de-imagen.jpg?s=612x612&w=0&k=20&c=j68OgfzBEEuUH9BXkWFUFr9RV7l6leODTPzNOC0m-r4=");
+                pbxarticulo.Load("https://media.istockphoto.com/id/1147544807/es/vector/no-imagen-en-miniatura-gr%C3%A1fico-vectorial.jpg?s=612x612&w=0&k=20&c=Bb7KlSXJXh3oSDlyFjIaCiB9llfXsgS7mHFZs6qUgVk=");
             }
         }
 
@@ -133,7 +137,7 @@ namespace TPWinForm_equipo_20B
             { listafiltrada = listaarticulo; }
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listafiltrada;
-
+            ocultarcolumna();
         }
     }
 }
