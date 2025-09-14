@@ -48,7 +48,7 @@
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
-            this.dgvArticulos.Size = new System.Drawing.Size(856, 387);
+            this.dgvArticulos.Size = new System.Drawing.Size(855, 387);
             this.dgvArticulos.TabIndex = 6;
             this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
@@ -136,9 +136,9 @@
             // 
             // pbxarticulo
             // 
-            this.pbxarticulo.Location = new System.Drawing.Point(876, 111);
+            this.pbxarticulo.Location = new System.Drawing.Point(875, 111);
             this.pbxarticulo.Name = "pbxarticulo";
-            this.pbxarticulo.Size = new System.Drawing.Size(276, 387);
+            this.pbxarticulo.Size = new System.Drawing.Size(277, 387);
             this.pbxarticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxarticulo.TabIndex = 7;
             this.pbxarticulo.TabStop = false;

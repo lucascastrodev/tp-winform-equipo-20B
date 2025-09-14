@@ -16,7 +16,7 @@ namespace TPWinForm_equipo_20B
     {
 
         private Articulo articulo = null;
-        
+
         public frmAgregar()
         {
             InitializeComponent();
@@ -28,48 +28,48 @@ namespace TPWinForm_equipo_20B
             this.articulo = articulo;
         }
 
-
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private bool ValidarCampos()
         {
-            this.Close();
+            if (string.IsNullOrWhiteSpace(txtCodigoArticulo.Text) ||
+                string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtDescripcion.Text) ||
+                cboIDMarca.SelectedValue == null ||
+                cboIDCategoria.SelectedValue == null ||
+                string.IsNullOrWhiteSpace(txtPrecio.Text))
+            {
+                MessageBox.Show("Por favor, agregue todos los datos del artículo.");
+                return false;
+            }
+
+            if (!decimal.TryParse(txtPrecio.Text, out _))
+            {
+                MessageBox.Show("Ingresá un precio válido.");
+                return false;
+            }
+
+            return true;
         }
+
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            //Articulo articulo = new Articulo();
             ArticuloNegocio negocio = new ArticuloNegocio();
-
 
             try
             {
+                
+                if (!ValidarCampos())
+                    return;
+
                 if (articulo == null)
-                {
                     articulo = new Articulo();
-                }
 
                 articulo.Codigo = txtCodigoArticulo.Text;
                 articulo.Nombre = txtNombre.Text;
                 articulo.Descripcion = txtDescripcion.Text;
-
-                // Marca y Categoría
-                if (cboIDMarca.SelectedValue == null || cboIDCategoria.SelectedValue == null)
-                {
-                    MessageBox.Show("Seleccioná Marca y Categoría.");
-                    return;
-                }
-
                 articulo.Marca = new Marca { IdMarca = (int)cboIDMarca.SelectedValue };
                 articulo.Categoria = new Categoria { IdCategoria = (int)cboIDCategoria.SelectedValue };
-
-                // Precio
-                decimal precio;
-                if (!decimal.TryParse(txtPrecio.Text, out precio))
-                {
-                    MessageBox.Show("Ingresá un precio válido.");
-                    return;
-                }
-
-                articulo.Precio = precio;
+                articulo.Precio = decimal.Parse(txtPrecio.Text);
 
                 if (articulo.idArticulo != 0)
                 {
@@ -78,31 +78,31 @@ namespace TPWinForm_equipo_20B
                 }
                 else
                 {
-
                     negocio.agregar(articulo);
                     MessageBox.Show("Agregado exitosamente");
-
                 }
-                Close();
 
+                Close();
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
         }
 
-        private void frmAgregar_Load(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            // Cargar marcas
+            this.Close();
+        }
+
+        private void frmAgregar_Load(object sender, EventArgs e)
+        { 
             MarcaNegocio mNegocio = new MarcaNegocio();
             cboIDMarca.DataSource = mNegocio.listar();
             cboIDMarca.DisplayMember = "Descripcion";
             cboIDMarca.ValueMember = "IdMarca";
             cboIDMarca.SelectedIndex = 0;
 
-            // Cargar categorías
             CategoriaNegocio cNegocio = new CategoriaNegocio();
             cboIDCategoria.DataSource = cNegocio.listar();
             cboIDCategoria.DisplayMember = "Descripcion";
