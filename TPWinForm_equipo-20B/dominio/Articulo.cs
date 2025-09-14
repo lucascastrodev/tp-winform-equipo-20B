@@ -17,7 +17,6 @@ namespace dominio
         public Categoria Categoria { get; set; }
         public decimal Precio { get; set; }
         public string UrlImagen { get; set; }
-        public List<Imagen> Imagenes { get; set; } = new List<Imagen>();
 
     }
 }

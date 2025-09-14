@@ -14,8 +14,7 @@ namespace TPWinForm_equipo_20B
 {
     public partial class frmPrincipal : Form
     {
-        public List<Articulo> listaarticulo = new List<Articulo>();
-
+        private List<Articulo> listaarticulo;
         public frmPrincipal()
         {
             InitializeComponent();
@@ -24,7 +23,10 @@ namespace TPWinForm_equipo_20B
         private void Form1_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-            dgvArticulos.DataSource = negocio.listar();
+            listaarticulo = negocio.listar();
+            dgvArticulos.DataSource = listaarticulo;
+            pbxarticulo.Load(listaarticulo[0].UrlImagen);
+
   
 
         }
@@ -82,8 +84,22 @@ namespace TPWinForm_equipo_20B
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            
+            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.UrlImagen);
         }
+
+        private void cargarImagen(string imagen) 
+        {
+            try
+            {
+                pbxarticulo.Load(imagen);
+            }
+            catch
+            {
+                pbxarticulo.Load("https://media.istockphoto.com/id/931643150/es/vector/icono-de-imagen.jpg?s=612x612&w=0&k=20&c=j68OgfzBEEuUH9BXkWFUFr9RV7l6leODTPzNOC0m-r4=");
+            }
+        }
+
 
         private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -96,6 +112,11 @@ namespace TPWinForm_equipo_20B
             seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             FrmDetalle detalleproducto = new FrmDetalle(seleccionado);
             detalleproducto.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

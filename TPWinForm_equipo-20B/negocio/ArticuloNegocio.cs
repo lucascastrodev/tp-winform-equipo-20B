@@ -18,7 +18,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("Select Id, Codigo, Nombre, Descripcion, IdCategoria, IdMarca, Precio from ARTICULOS;");
+                datos.setearConsulta("SELECT a.id,a.codigo,a.nombre,a.descripcion,a.idcategoria,a.idmarca,a.precio,i.ImagenUrl FROM articulos a LEFT JOIN imagenes i ON a.id = i.IdArticulo; ");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -33,11 +33,9 @@ namespace negocio
                     aux.Marca = new Marca();
                     aux.Marca.IdMarca = (int)datos.Lector["IdMarca"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
-                    List<Imagen> imagenes = imagenNegocio.listarPorArticulo(aux.idArticulo);
-                    if (imagenes != null && imagenes.Count > 0)
-                        aux.UrlImagen = imagenes[0].UrlImagen;
-                    else
-                        aux.UrlImagen = null;
+                    if(!(datos.Lector.IsDBNull(datos.Lector.GetOrdinal("ImagenUrl"))))
+                    aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
+
 
 
 

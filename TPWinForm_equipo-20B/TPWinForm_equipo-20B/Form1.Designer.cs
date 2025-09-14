@@ -36,6 +36,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnVerDetalle = new System.Windows.Forms.Button();
             this.pbxarticulo = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxarticulo)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +61,7 @@
             this.txbBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.ShortcutsEnabled = false;
-            this.txbBuscar.Size = new System.Drawing.Size(288, 27);
+            this.txbBuscar.Size = new System.Drawing.Size(288, 23);
             this.txbBuscar.TabIndex = 0;
             this.txbBuscar.TabStop = false;
             this.txbBuscar.Text = "Buscar...";
@@ -72,7 +73,7 @@
             this.lblTitulo.Location = new System.Drawing.Point(6, 9);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(295, 41);
+            this.lblTitulo.Size = new System.Drawing.Size(234, 32);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Gestion de Articulos";
             // 
@@ -144,12 +145,23 @@
             this.pbxarticulo.TabStop = false;
             this.pbxarticulo.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(320, 60);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 37);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1164, 576);
+            this.ClientSize = new System.Drawing.Size(1166, 584);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pbxarticulo);
             this.Controls.Add(this.btnVerDetalle);
             this.Controls.Add(this.btnEliminar);
@@ -185,6 +197,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnVerDetalle;
         private System.Windows.Forms.PictureBox pbxarticulo;
+        private System.Windows.Forms.Button button1;
     }
 }
 
