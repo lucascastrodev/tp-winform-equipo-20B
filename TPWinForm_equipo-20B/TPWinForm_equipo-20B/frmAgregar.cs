@@ -70,6 +70,7 @@ namespace TPWinForm_equipo_20B
                 articulo.Marca = new Marca { IdMarca = (int)cboIDMarca.SelectedValue };
                 articulo.Categoria = new Categoria { IdCategoria = (int)cboIDCategoria.SelectedValue };
                 articulo.Precio = decimal.Parse(txtPrecio.Text);
+                articulo.UrlImagen = textUrlImagen.Text;
 
                 if (articulo.idArticulo != 0)
                 {
@@ -119,6 +120,30 @@ namespace TPWinForm_equipo_20B
                 txtPrecio.Text = articulo.Precio.ToString();
 
             }
+
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxarticulo.Load(imagen);
+            }
+            catch
+            {
+                pbxarticulo.Load("https://media.istockphoto.com/id/1147544807/es/vector/no-imagen-en-miniatura-gr%C3%A1fico-vectorial.jpg?s=612x612&w=0&k=20&c=Bb7KlSXJXh3oSDlyFjIaCiB9llfXsgS7mHFZs6qUgVk=");
+            }
+        }
+
+
+        private void textUrlImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(textUrlImagen.Text);
+
+        }
+
+        private void textUrlImagen_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

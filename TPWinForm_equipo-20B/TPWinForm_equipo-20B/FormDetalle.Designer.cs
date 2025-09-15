@@ -193,8 +193,12 @@
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(165, 132);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.pictureBox1_LoadCompleted);
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Resize += new System.EventHandler(this.pictureBox1_Resize);
             // 
             // btnCancelar
             // 
@@ -231,6 +235,7 @@
             this.Controls.Add(this.lblNombreArticulo);
             this.Controls.Add(this.txtNombre);
             this.Name = "FrmDetalle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalle";
             this.Load += new System.EventHandler(this.FrmDetalle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
