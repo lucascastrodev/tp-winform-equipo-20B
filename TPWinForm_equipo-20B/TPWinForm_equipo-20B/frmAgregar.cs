@@ -70,7 +70,6 @@ namespace TPWinForm_equipo_20B
                 articulo.Marca = new Marca { IdMarca = (int)cboIDMarca.SelectedValue };
                 articulo.Categoria = new Categoria { IdCategoria = (int)cboIDCategoria.SelectedValue };
                 articulo.Precio = decimal.Parse(txtPrecio.Text);
-                articulo.UrlImagen = textUrlImagen.Text;
 
                 if (articulo.idArticulo != 0)
                 {

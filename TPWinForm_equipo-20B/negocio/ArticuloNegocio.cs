@@ -18,7 +18,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("SELECT a.id,a.codigo,a.nombre,a.descripcion,a.idcategoria,a.idmarca,a.precio,i.ImagenUrl FROM articulos a LEFT JOIN imagenes i ON a.id = i.IdArticulo; ");
+                datos.setearConsulta("SELECT Id, Codigo, Nombre, Descripcion, IdCategoria, IdMarca, Precio FROM Articulos");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -33,12 +33,6 @@ namespace negocio
                     aux.Marca = new Marca();
                     aux.Marca.IdMarca = (int)datos.Lector["IdMarca"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
-                    if(!(datos.Lector.IsDBNull(datos.Lector.GetOrdinal("ImagenUrl"))))
-                    aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
-
-
-
-
 
                     lista.Add(aux);
                 }
@@ -50,26 +44,35 @@ namespace negocio
 
                 throw ex;
             }
+            finally 
+            {
+                datos.CerrarConexion();
+            }
         }
 
         public void agregar(Articulo nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
-
             try
             {
                 datos.setearConsulta(
-                "INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) " +
-                "VALUES ('" + nuevo.Codigo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', " +
-                nuevo.Marca.IdMarca + ", " + nuevo.Categoria.IdCategoria + ", " + nuevo.Precio + ")"
-                  );
-                datos.ejecutarAccion();
+                    "INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) " +
+                    "VALUES (@Codigo, @Nombre, @Descripcion, @IdMarca, @IdCategoria, @Precio)"
+                );
+
+                datos.setearParametro("@Codigo", nuevo.Codigo);
+                datos.setearParametro("@Nombre", nuevo.Nombre);
+                datos.setearParametro("@Descripcion", nuevo.Descripcion);
+                datos.setearParametro("@IdMarca", nuevo.Marca.IdMarca);
+                datos.setearParametro("@IdCategoria", nuevo.Categoria.IdCategoria);
+                datos.setearParametro("@Precio", nuevo.Precio);
+
+                datos.ejecutarAccion(); // ← Solo ejecutar acción, no necesitas el ID
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-
             finally
             {
                 datos.CerrarConexion();

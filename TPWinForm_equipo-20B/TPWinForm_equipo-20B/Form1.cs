@@ -25,10 +25,7 @@ namespace TPWinForm_equipo_20B
             ArticuloNegocio negocio = new ArticuloNegocio();
             listaarticulo = negocio.listar();
             dgvArticulos.DataSource = listaarticulo;
-            pbxarticulo.Load(listaarticulo[0].UrlImagen);
-            ocultarcolumna();
 
-  
 
         }
 
@@ -44,7 +41,6 @@ namespace TPWinForm_equipo_20B
 
         private void ocultarcolumna()
         {
-            dgvArticulos.Columns["UrlImagen"].Visible = false;
             dgvArticulos.Columns["idArticulo"].Visible = false;
         }
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -54,14 +50,14 @@ namespace TPWinForm_equipo_20B
 
             try
             {
-                DialogResult respuesta =  MessageBox.Show("¿Estas seguro que querés eliminar? No podrás volver atrás","Eliminando",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult respuesta = MessageBox.Show("¿Estas seguro que querés eliminar? No podrás volver atrás", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (respuesta == DialogResult.Yes)
                 {
-                     seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                     negocio.eliminar(seleccionado.idArticulo);
-                     dgvArticulos.DataSource = negocio.listar();
+                    seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                    negocio.eliminar(seleccionado.idArticulo);
+                    dgvArticulos.DataSource = negocio.listar();
                 }
-    
+
             }
             catch (Exception ex)
             {
@@ -83,38 +79,6 @@ namespace TPWinForm_equipo_20B
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
-        {
-            if(dgvArticulos.CurrentRow != null)
-            {
-                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                cargarImagen(seleccionado.UrlImagen);
-            }
-           
-        }
-
-        private void cargarImagen(string imagen) 
-        {
-            try
-            {
-                pbxarticulo.Load(imagen);
-            }
-            catch 
-            {
-                pbxarticulo.Load("https://media.istockphoto.com/id/1147544807/es/vector/no-imagen-en-miniatura-gr%C3%A1fico-vectorial.jpg?s=612x612&w=0&k=20&c=Bb7KlSXJXh3oSDlyFjIaCiB9llfXsgS7mHFZs6qUgVk=");
-            }
-        }
-
-
-        private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void btnVerDetalle_Click(object sender, EventArgs e)
         {
@@ -132,18 +96,15 @@ namespace TPWinForm_equipo_20B
 
             if (filtro != "")
             {
-                listafiltrada = listaarticulo.FindAll(x => x.Nombre.ToUpper().Contains( filtro.ToUpper()) || x.Codigo.ToUpper().Contains(filtro.ToUpper()));
-            }else
+                listafiltrada = listaarticulo.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Codigo.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
             { listafiltrada = listaarticulo; }
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listafiltrada;
             ocultarcolumna();
         }
 
-        private void txbBuscar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
 
         private void txbBuscar_TextChanged(object sender, EventArgs e)
         {
@@ -160,6 +121,23 @@ namespace TPWinForm_equipo_20B
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listafiltrada;
             ocultarcolumna();
+        }
+
+        private void btnGestionarImagenes_Click_1(object sender, EventArgs e)
+        {
+            if (dgvArticulos.CurrentRow != null && dgvArticulos.CurrentRow.Cells["idArticulo"].Value != null)
+            {
+                int idArticulo = (int)dgvArticulos.CurrentRow.Cells["idArticulo"].Value;
+                string nombreArticulo = dgvArticulos.CurrentRow.Cells["nombre"].Value.ToString();
+
+                frmGestionImagenes formImagenes = new frmGestionImagenes(idArticulo, nombreArticulo);
+                formImagenes.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un artículo primero");
+            }
+
         }
     }
 }

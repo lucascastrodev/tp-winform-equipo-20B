@@ -49,8 +49,6 @@ namespace TPWinForm_equipo_20B
                 cboIDCategoria.SelectedValue = articulo.Categoria.IdCategoria;
                 cboIDMarca.SelectedValue = articulo.Marca.IdMarca;
                 txtPrecio.Text = articulo.Precio.ToString();
-                textUrlImagen.Text = articulo.UrlImagen.ToString();
-                pictureBox1.Load(articulo.UrlImagen);
 
             }
         }

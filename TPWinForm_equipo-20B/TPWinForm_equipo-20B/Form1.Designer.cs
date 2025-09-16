@@ -37,6 +37,7 @@
             this.btnVerDetalle = new System.Windows.Forms.Button();
             this.pbxarticulo = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnGestionarImagenes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxarticulo)).BeginInit();
             this.SuspendLayout();
@@ -45,14 +46,12 @@
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvArticulos.Location = new System.Drawing.Point(13, 111);
+            this.dgvArticulos.Location = new System.Drawing.Point(102, 111);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.Size = new System.Drawing.Size(855, 387);
             this.dgvArticulos.TabIndex = 6;
-            this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
-            this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // txbBuscar
             // 
@@ -65,7 +64,6 @@
             this.txbBuscar.TabIndex = 0;
             this.txbBuscar.TabStop = false;
             this.txbBuscar.TextChanged += new System.EventHandler(this.txbBuscar_TextChanged);
-            this.txbBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbBuscar_KeyPress);
             // 
             // lblTitulo
             // 
@@ -128,7 +126,7 @@
             this.btnVerDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerDetalle.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerDetalle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnVerDetalle.Location = new System.Drawing.Point(404, 506);
+            this.btnVerDetalle.Location = new System.Drawing.Point(400, 506);
             this.btnVerDetalle.Name = "btnVerDetalle";
             this.btnVerDetalle.Size = new System.Drawing.Size(111, 26);
             this.btnVerDetalle.TabIndex = 5;
@@ -144,7 +142,6 @@
             this.pbxarticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxarticulo.TabIndex = 7;
             this.pbxarticulo.TabStop = false;
-            this.pbxarticulo.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button1
             // 
@@ -156,12 +153,27 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnGestionarImagenes
+            // 
+            this.btnGestionarImagenes.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnGestionarImagenes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionarImagenes.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionarImagenes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGestionarImagenes.Location = new System.Drawing.Point(715, 506);
+            this.btnGestionarImagenes.Name = "btnGestionarImagenes";
+            this.btnGestionarImagenes.Size = new System.Drawing.Size(153, 26);
+            this.btnGestionarImagenes.TabIndex = 9;
+            this.btnGestionarImagenes.Text = "Gestionar Imagenes";
+            this.btnGestionarImagenes.UseVisualStyleBackColor = false;
+            this.btnGestionarImagenes.Click += new System.EventHandler(this.btnGestionarImagenes_Click_1);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1166, 584);
+            this.Controls.Add(this.btnGestionarImagenes);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pbxarticulo);
             this.Controls.Add(this.btnVerDetalle);
@@ -199,6 +211,7 @@
         private System.Windows.Forms.Button btnVerDetalle;
         private System.Windows.Forms.PictureBox pbxarticulo;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGestionarImagenes;
     }
 }
 
