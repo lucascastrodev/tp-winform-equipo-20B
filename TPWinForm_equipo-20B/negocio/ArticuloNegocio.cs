@@ -44,7 +44,7 @@ namespace negocio
 
                 throw ex;
             }
-            finally 
+            finally
             {
                 datos.CerrarConexion();
             }
@@ -97,7 +97,7 @@ namespace negocio
         }
 
         public void modificar(Articulo modificar)
-        { 
+        {
             AccesoDatos datos = new AccesoDatos();
             try
             {
@@ -122,6 +122,34 @@ namespace negocio
             {
                 datos.CerrarConexion();
             }
-        } 
+        }
+
+
+        public string ObtenerPrimeraImagenUrl(int idArticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT TOP 1 ImagenUrl FROM IMAGENES WHERE IdArticulo = @id ORDER BY Id");
+                datos.setearParametro("@id", idArticulo);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    if (!(datos.Lector["ImagenUrl"] is DBNull))
+                        return (string)datos.Lector["ImagenUrl"];
+                }
+
+                return "https://cdn4.iconfinder.com/data/icons/ui-beast-4/32/Ui-12-512.png"; // Imagen genérica
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
     }
 }

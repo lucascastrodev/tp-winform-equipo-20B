@@ -52,6 +52,7 @@
             this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.Size = new System.Drawing.Size(855, 387);
             this.dgvArticulos.TabIndex = 6;
+            this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // txbBuscar
             // 

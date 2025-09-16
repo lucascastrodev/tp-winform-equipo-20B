@@ -139,5 +139,45 @@ namespace TPWinForm_equipo_20B
             }
 
         }
+        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvArticulos.CurrentRow != null && dgvArticulos.CurrentRow.Cells["idArticulo"].Value != null)
+            {
+                int idArticulo = (int)dgvArticulos.CurrentRow.Cells["idArticulo"].Value;
+
+                ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+                string urlImagen = articuloNegocio.ObtenerPrimeraImagenUrl(idArticulo);
+
+                CargarImagenArticulo(urlImagen);
+            }
+            else
+            {
+                CargarImagenGenerica();
+            }
+        }
+        private void CargarImagenArticulo(string urlImagen)
+        {
+            try
+            {
+                pbxarticulo.Load(urlImagen);
+            }
+            catch (Exception)
+            {
+                CargarImagenGenerica();
+            }
+        }
+
+        private void CargarImagenGenerica()
+        {
+            try
+            {
+                pbxarticulo.Load("https://cdn4.iconfinder.com/data/icons/ui-beast-4/32/Ui-12-512.png");
+            }
+            catch
+            {
+                pbxarticulo.Image = null;
+            }
+        }
+
     }
 }
