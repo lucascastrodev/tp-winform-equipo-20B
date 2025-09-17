@@ -179,5 +179,16 @@ namespace TPWinForm_equipo_20B
             }
         }
 
+        private void btnGestionCategorias_Click(object sender, EventArgs e)
+        {
+            FrmCategorias Form3 = new FrmCategorias();
+            Form3.ShowDialog();
+        }
+
+        private void btnGestionarMarcas_Click(object sender, EventArgs e)
+        {
+            FrmMarca formMarcas = new FrmMarca();
+            formMarcas.ShowDialog();
+        }
     }
 }

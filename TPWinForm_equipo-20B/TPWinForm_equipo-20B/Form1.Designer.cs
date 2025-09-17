@@ -38,6 +38,8 @@
             this.pbxarticulo = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnGestionarImagenes = new System.Windows.Forms.Button();
+            this.btnGestionCategorias = new System.Windows.Forms.Button();
+            this.btnGestionarMarcas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxarticulo)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +63,7 @@
             this.txbBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.ShortcutsEnabled = false;
-            this.txbBuscar.Size = new System.Drawing.Size(288, 23);
+            this.txbBuscar.Size = new System.Drawing.Size(288, 31);
             this.txbBuscar.TabIndex = 0;
             this.txbBuscar.TabStop = false;
             this.txbBuscar.TextChanged += new System.EventHandler(this.txbBuscar_TextChanged);
@@ -73,7 +75,7 @@
             this.lblTitulo.Location = new System.Drawing.Point(6, 9);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(234, 32);
+            this.lblTitulo.Size = new System.Drawing.Size(351, 48);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Gestion de Articulos";
             // 
@@ -168,12 +170,36 @@
             this.btnGestionarImagenes.UseVisualStyleBackColor = false;
             this.btnGestionarImagenes.Click += new System.EventHandler(this.btnGestionarImagenes_Click_1);
             // 
+            // btnGestionCategorias
+            // 
+            this.btnGestionCategorias.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionCategorias.Location = new System.Drawing.Point(909, 504);
+            this.btnGestionCategorias.Name = "btnGestionCategorias";
+            this.btnGestionCategorias.Size = new System.Drawing.Size(97, 28);
+            this.btnGestionCategorias.TabIndex = 10;
+            this.btnGestionCategorias.Text = "Categorias";
+            this.btnGestionCategorias.UseVisualStyleBackColor = true;
+            this.btnGestionCategorias.Click += new System.EventHandler(this.btnGestionCategorias_Click);
+            // 
+            // btnGestionarMarcas
+            // 
+            this.btnGestionarMarcas.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionarMarcas.Location = new System.Drawing.Point(1033, 504);
+            this.btnGestionarMarcas.Name = "btnGestionarMarcas";
+            this.btnGestionarMarcas.Size = new System.Drawing.Size(97, 28);
+            this.btnGestionarMarcas.TabIndex = 11;
+            this.btnGestionarMarcas.Text = "Marcas";
+            this.btnGestionarMarcas.UseVisualStyleBackColor = true;
+            this.btnGestionarMarcas.Click += new System.EventHandler(this.btnGestionarMarcas_Click);
+            // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1166, 584);
+            this.ClientSize = new System.Drawing.Size(1160, 567);
+            this.Controls.Add(this.btnGestionarMarcas);
+            this.Controls.Add(this.btnGestionCategorias);
             this.Controls.Add(this.btnGestionarImagenes);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pbxarticulo);
@@ -213,6 +239,8 @@
         private System.Windows.Forms.PictureBox pbxarticulo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnGestionarImagenes;
+        private System.Windows.Forms.Button btnGestionCategorias;
+        private System.Windows.Forms.Button btnGestionarMarcas;
     }
 }
 
